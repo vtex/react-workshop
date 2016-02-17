@@ -4,11 +4,16 @@ import Post from './Post/Post';
 
 class PostList extends React.Component {
   render() {
-    const posts = this.props.posts.map((post, index) => {
+    const { previewPost } = this.props;
+    const reversedPosts = [...this.props.posts].reverse();
+    const posts = reversedPosts.map((post, index) => {
       return (
         <div key={index}>
           <hr />
-          <Post {...post} />
+          <Post
+            {...post}
+            increaseLike={this.props.increaseLike}
+          />
         </div>
       );
     });
@@ -16,11 +21,17 @@ class PostList extends React.Component {
     return (
       <div className="PostList row">
         <div className="col-lg-8 col-lg-offset-2">
+          {
+            previewPost && previewPost.post.length > 0 ?
+              <Post
+                {...previewPost}
+              /> : null
+          }
           { posts }
         </div>
       </div>
     );
-  }
+  };
 }
 
 export default PostList;

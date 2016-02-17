@@ -5,12 +5,14 @@ class Header extends React.Component {
   render() {
     return (
       <div className="Header row">
-        <div className="col-lg-12">
-          <h1>tvviterx</h1>
+        <div className="col-lg-12 text-center">
+          <h1 className="Header__title">
+            tvviterx
+          </h1>
         </div>
       </div>
     );
-  }
+  };
 }
 
 export default Header;

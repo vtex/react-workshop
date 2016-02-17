@@ -3,10 +3,6 @@ import './Post.less';
 import Like from './Like/Like';
 
 class Post extends React.Component {
-  increaseLike = () => {
-    this.props.increaseLike(this.props.id);
-  };
-
   render() {
     return (
       <div className="Post">
@@ -29,13 +25,9 @@ class Post extends React.Component {
             </span>
           </div>
         </div>
-        {
-          this.props.increaseLike ?
-            <Like
-              likes={this.props.likes}
-              increaseLike={this.increaseLike}
-            /> : null
-        }
+        <Like
+          likes={this.props.likes}
+        />
       </div>
     );
   };

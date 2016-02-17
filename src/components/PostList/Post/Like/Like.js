@@ -4,8 +4,6 @@ import './Like.less';
 class Like extends React.Component {
   handleClick = (e) => {
     e.preventDefault();
-
-    this.props.increaseLike();
   };
 
   render() {

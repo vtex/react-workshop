@@ -3,21 +3,15 @@ import './PostArea.less';
 
 class PostArea extends React.Component {
   componentDidMount() {
-    this.input.focus();
+    //YOU CAN DO STUFF HERE
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-
-    this.props.addPost(this.makePost(this.input.value));
-    this.input.value = '';
-    this.props.updatePreviewPost(null);
   };
 
   handleChange = (e) => {
-    const previewPost = this.makePost(e.target.value);
-
-    this.props.updatePreviewPost(previewPost);
+    //YOU CAN DO MORE STUFF HERE
   }
 
   getTodayDate = () => {

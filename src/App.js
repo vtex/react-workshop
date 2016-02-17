@@ -37,43 +37,14 @@ class App extends React.Component {
     ];
 
     this.setState({
-      posts,
-      previewPost: null
+      posts
     });
   }
 
   addPost = (post) => {
-    const lastPostIndex = this.state.posts.length - 1;
-    const clonedPost = {
-      id: this.state.posts[lastPostIndex].id + 1,
-      ...post
-    };
-    const posts = [
-      ...this.state.posts,
-      clonedPost
-    ];
+    //DO YOUR STUFF HERE
 
     this.setState({ posts });
-  };
-
-  increaseLike = (id) => {
-    const currentPosts = this.state.posts;
-    const post = currentPosts[id];
-    const clonedPost = {
-      ...post,
-      likes: post.likes + 1
-    };
-    const posts = [
-      ...currentPosts.slice(0, id),
-      clonedPost,
-      ...currentPosts.slice(id + 1)
-    ];
-
-    this.setState({ posts });
-  };
-
-  updatePreviewPost = (previewPost) => {
-    this.setState({ previewPost });
   };
 
   render() {
@@ -82,11 +53,9 @@ class App extends React.Component {
         <Header />
         <PostArea
           addPost={this.addPost}
-          updatePreviewPost={this.updatePreviewPost}
         />
         <PostList
           {...this.state}
-          increaseLike={this.increaseLike}
         />
       </div>
     );

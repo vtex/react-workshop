@@ -18,6 +18,7 @@ class PostArea extends React.Component {
     };
 
     this.props.addPost(post);
+    this.input.value = null;
   }
 
   render() {
